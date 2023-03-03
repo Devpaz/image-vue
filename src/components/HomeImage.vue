@@ -5,20 +5,20 @@
             <img class="image-right" 
             :src ="imageRight">
             
-            <h4>Arequipa</h4>
+            <h4>{{cityRight}}</h4>
         </div>
         <div @click="handleClickCenter">
             <img class="image-center" 
             :src ="imageCenter">
-            <h4>Ica</h4>
+            <h4>{{cityCenter}}</h4>
         </div>
         <div @click="handleClickLeft">
             <img class="image-left" 
             :src="imageLeft">
-            <h4>Lima</h4>
+            <h4>{{cityLeft}}</h4>
         </div>
     </div>
-    <h3>{{city}}</h3>
+    <h3>{{cityCenter}}</h3>
 
 </template>
 
@@ -26,11 +26,12 @@
 export default {
     data () {
         return {
-            city: 'Tacna',
+            cityRight: 'Arequipa',
+            cityCenter: 'Ica',
+            cityLeft: 'Lima',
             imageRight:require('@/assets/city/AQP.jpg'),
             imageCenter:require('@/assets/city/ICA.jpg'),
             imageLeft:require('@/assets/city/LIM.jpg')
-
         }
     },
     methods:{
@@ -38,17 +39,21 @@ export default {
             this.imageRightOld=this.imageRight
             this.imageRight=this.imageCenter
             this.imageCenter=this.imageRightOld
-            this.city = 'Arequipa'
-
+            this.cityRightOld = this.cityRight
+            this.cityRight = this.cityCenter
+            this.cityCenter = this.cityRightOld
         },
         handleClickCenter() {
-            this.city = 'Ica'
+            this.cityCenter
         },
         handleClickLeft() {
             this.city = 'Lima'
             this.imageCenterOld=this.imageCenter
             this.imageCenter=this.imageLeft
             this.imageLeft=this.imageCenterOld
+            this.cityCenterOld = this.cityCenter
+            this.cityCenter = this.cityLeft
+            this.cityLeft = this.cityCenterOld
         }
     }
 
