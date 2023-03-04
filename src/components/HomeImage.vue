@@ -53,7 +53,6 @@ export default {
             this.cityCenter = this.cityRightOld
         },
         handleClickLeft() {
-            this.city = 'Lima'
             this.imageCenterOld=this.imageCenter
             this.imageCenter=this.imageLeft
             this.imageLeft=this.imageCenterOld

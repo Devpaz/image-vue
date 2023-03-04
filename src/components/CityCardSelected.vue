@@ -1,5 +1,5 @@
 <template>
-    <div @click="handleClickCenter">
+    <div >
         <img class="image-center" 
         :src ="image">
         <h4>{{city}}</h4>
