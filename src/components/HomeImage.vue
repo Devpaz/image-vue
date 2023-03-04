@@ -1,29 +1,38 @@
 <template>
     <h1>Select a City</h1>
     <div class="container">
-        <div @click="handleClickRight">
-            <img class="image-right" 
-            :src ="imageRight">
-            
-            <h4>{{cityRight}}</h4>
-        </div>
-        <div @click="handleClickCenter">
-            <img class="image-center" 
-            :src ="imageCenter">
-            <h4>{{cityCenter}}</h4>
-        </div>
-        <div @click="handleClickLeft">
-            <img class="image-left" 
-            :src="imageLeft">
-            <h4>{{cityLeft}}</h4>
-        </div>
-    </div>
-    <h3>{{cityCenter}}</h3>
+        <CityCard 
+        :btn=handleClickRight
+        :image =imageRight
+        :city=cityRight
+        />
 
+        <CityCardSelected 
+        :image=imageCenter
+        :city=cityCenter
+        />
+
+        <CityCard 
+        :btn=handleClickLeft
+        :image =imageLeft
+        :city=cityLeft
+        />
+    </div>
+    <CityInfo
+    :city=cityCenter
+    />
 </template>
 
 <script>
+import CityCard from '@/components/CityCard'
+import CityCardSelected from '@/components/CityCardSelected'
+import CityInfo from '@/components/CityInfo'
+
+
 export default {
+    components: {
+    CityCard, CityCardSelected,CityInfo
+    },
     data () {
         return {
             cityRight: 'Arequipa',
@@ -42,9 +51,6 @@ export default {
             this.cityRightOld = this.cityRight
             this.cityRight = this.cityCenter
             this.cityCenter = this.cityRightOld
-        },
-        handleClickCenter() {
-            this.cityCenter
         },
         handleClickLeft() {
             this.city = 'Lima'
