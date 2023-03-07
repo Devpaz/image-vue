@@ -1,14 +1,14 @@
 <template>
-    <div @click=btn>
+    <div>
         <img class="image-right" 
-        :src ="image">
+        :src="image">
         <h4>{{city}}</h4>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['city','image','btn']
+    props: ['city','image']
 }
 </script>
 

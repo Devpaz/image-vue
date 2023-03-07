@@ -1,9 +1,9 @@
 <template>
     <h1>Select a City</h1>
     <div class="container">
-        <CityCard 
-        :btn=handleClickRight
-        :image =imageRight
+        <CityCard
+        @click=handleClickRight 
+        :image=imageRight
         :city=cityRight
         />
 
@@ -13,8 +13,8 @@
         />
 
         <CityCard 
-        :btn=handleClickLeft
-        :image =imageLeft
+        @click=handleClickLeft
+        :image=imageLeft
         :city=cityLeft
         />
     </div>
@@ -48,17 +48,17 @@ export default {
             this.imageRightOld=this.imageRight
             this.imageRight=this.imageCenter
             this.imageCenter=this.imageRightOld
-            this.cityRightOld = this.cityRight
-            this.cityRight = this.cityCenter
-            this.cityCenter = this.cityRightOld
+            this.cityRightOld=this.cityRight
+            this.cityRight=this.cityCenter
+            this.cityCenter=this.cityRightOld
         },
         handleClickLeft() {
             this.imageCenterOld=this.imageCenter
             this.imageCenter=this.imageLeft
             this.imageLeft=this.imageCenterOld
-            this.cityCenterOld = this.cityCenter
-            this.cityCenter = this.cityLeft
-            this.cityLeft = this.cityCenterOld
+            this.cityCenterOld=this.cityCenter
+            this.cityCenter=this.cityLeft
+            this.cityLeft=this.cityCenterOld
         }
     }
 

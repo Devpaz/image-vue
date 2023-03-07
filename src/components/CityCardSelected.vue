@@ -1,7 +1,7 @@
 <template>
     <div >
         <img class="image-center" 
-        :src ="image">
+        :src="image">
         <h4>{{city}}</h4>
     </div>
 </template>
